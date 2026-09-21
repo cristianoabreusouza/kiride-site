@@ -1,0 +1,33 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Abrir no KiRide</title><link rel="stylesheet" href="style.css">
+<meta name="description" content="Abra este conteúdo no app KiRide.">
+</head>
+<body><header><a href="index.html">KiRide</a><nav><a href="suporte.html">Suporte</a><a href="privacidade.html">Privacidade</a></nav></header>
+<main>
+<h1 id="titulo">Abrir no KiRide</h1>
+<p class="lead" id="texto">Toque no botão para abrir direto no app.</p>
+<p><a id="abrir" class="btn" href="#">Abrir no KiRide</a></p>
+<div class="card">
+  <p><strong>Ainda não tem o app?</strong><br>
+  O KiRide é gratuito: mostra rolês, eventos e rotas perto de você, filtrados pela sua moto.</p>
+  <p><a id="loja" href="index.html">Baixar o KiRide</a></p>
+</div>
+<div class="card" id="semlink" hidden><p>Este link está incompleto. Abra o KiRide e procure o conteúdo na aba Descobrir.</p></div>
+<script>
+  // O app registra o esquema kiride://; a rota interna vem no parâmetro "ir" (ex.: rides/123).
+  var destino = new URLSearchParams(location.search).get('ir') || '';
+  var rotulos = {rides: 'este rolê', events: 'este evento', routes: 'esta rota', posts: 'esta publicação', users: 'este perfil'};
+  var tipo = rotulos[destino.split('/')[0]] || 'este conteúdo';
+  var abrir = document.getElementById('abrir');
+  if (destino) {
+    var url = 'kiride://' + destino;
+    abrir.href = url;
+    document.getElementById('texto').textContent = 'Toque no botão para ver ' + tipo + ' no app.';
+    // tentativa automática: em muitos navegadores o app abre sozinho; se não, o botão continua ali
+    setTimeout(function () { location.href = url; }, 500);
+  } else {
+    abrir.hidden = true;
+    document.getElementById('semlink').hidden = false;
+  }
+</script>
+</main><footer>© 2026 KiRide</footer></body></html>

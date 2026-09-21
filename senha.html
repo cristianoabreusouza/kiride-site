@@ -1,0 +1,16 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Redefinir senha — KiRide</title><link rel="stylesheet" href="style.css"></head>
+<body><header><a href="index.html">KiRide</a><nav><a href="suporte.html">Suporte</a><a href="privacidade.html">Privacidade</a></nav></header>
+<main>
+<h1>Redefinir senha</h1>
+<p class="lead">Toque no botão abaixo no celular onde o KiRide está instalado. O link vale por 1 hora.</p>
+<p><a id="open" class="btn" href="#">Abrir no KiRide</a></p>
+<div class="card" id="nolink" hidden><p>Este link está incompleto. No app, toque em "Esqueci minha senha" para receber um novo.</p></div>
+<div class="card"><p><small>Se o botão não abrir o app, instale o KiRide e toque de novo. Se estiver no computador, abra este e-mail no celular.</small></p></div>
+<script>
+  var t = new URLSearchParams(location.search).get('token');
+  var a = document.getElementById('open');
+  if (t) { a.href = 'kiride://reset-password?token=' + encodeURIComponent(t); setTimeout(function(){ location.href = a.href; }, 400); }
+  else { a.hidden = true; document.getElementById('nolink').hidden = false; }
+</script>
+</main><footer>© 2026 KiRide</footer></body></html>

@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.kiride",
+      "sha256_cert_fingerprints": [
+        "75:9B:F2:C1:9E:7D:75:D5:D1:8A:54:9C:27:E4:C1:B2:09:C9:C6:EE:DD:21:AD:6F:A2:BA:B1:54:28:CA:3C:95",
+        "B2:14:97:09:1D:15:EF:0A:3F:49:A6:FE:5B:74:49:69:88:6B:49:67:2F:EC:DA:5F:24:F8:11:82:C0:A2:66:D8"
+      ]
+    }
+  }
+]
