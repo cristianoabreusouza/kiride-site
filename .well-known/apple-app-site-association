@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["ULNWN65723.app.kiride"],
+        "components": [
+          { "/": "/abrir.html", "?": { "ir": "?*" }, "comment": "Conteúdo compartilhado: rolê, evento, rota, publicação, perfil" },
+          { "/": "/verificar.html", "?": { "token": "?*" }, "comment": "Confirmação de e-mail" },
+          { "/": "/senha.html", "?": { "token": "?*" }, "comment": "Redefinição de senha" }
+        ]
+      }
+    ]
+  }
+}
